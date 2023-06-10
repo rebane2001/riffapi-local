@@ -1,4 +1,4 @@
-FROM python:3.6.15-slim
+FROM python:3.11.3-slim
 RUN mkdir /app
 ADD riffapi-local.py /app
 WORKDIR /app
