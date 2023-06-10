@@ -25,13 +25,13 @@ Patch `ParseOctane.dll` to use RiffApi Local changing "https://parseapi.back4app
 
 You have two options:
 
-1. Use [Docker](https://www.docker.com/products/docker-desktop/) (recommended).
-
-   Open a command prompt on this directory and run `docker compose up --build`
-
-2. Install [Python 3.6+](https://www.python.org/downloads/release/python-368/) and [Flask](https://pypi.org/project/Flask/).
+1. Install [Python 3.6+](https://www.python.org/downloads/) and [Flask](https://pypi.org/project/Flask/) (recommended).
 
    Run `riffapi-local.py`.
+
+2. Use [Docker](https://www.docker.com/products/docker-desktop/).
+
+   Open a command prompt on this directory and run `docker compose up --build`
 
 **Important**: keep open the command prompt until you exit the game.
 
