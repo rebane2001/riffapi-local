@@ -13,27 +13,24 @@ This project is a basic local server for the [Riff Racer](https://store.steampow
 
 ### Patching ParseOctane.dll
 
-Patch `ParseOctane.dll` to use RiffApi Local changing "https://parseapi.back4app.com" by "http://127.000000000.0.1:5144".
+Patch `ParseOctane.dll` to use RiffApi Local changing "https://parseapi.back4app.com" with "http://127.000000000.0.1:5144".
 
-1. Open Steam and go to your game library
-2. Right click on "Riff Racer" on the game list
-3. Press on "manage" > "browse local files", it will open the folder where the game files are located.
-4. Open a command prompt, `shift` + `right-click` and "Open PowerShell window here
-5. Run `sed -i "s/https:\/\/parseapi.back4app.com/http:\/\/127.000000000.0.1:5144/g" ParseOctane.dll` or open "ParseOctane.dll" with a text editor and replace all the occurrences of "https://parseapi.back4app.com" by "http://127.000000000.0.1:5144".
+You can do so with sed (`sed -i "s/https:\/\/parseapi.back4app.com/http:\/\/127.000000000.0.1:5144/g" ParseOctane.dll`), a hex editor, or by simply using the [website](https://riffapi.hobune.stream/).
 
 ### Running the API
 
-You have two options:
+There are multiple ways to run the server:
 
-1. Install [Python 3.6+](https://www.python.org/downloads/) and [Flask](https://pypi.org/project/Flask/) (recommended).
+- Run with Python (recommended)
+  1. Install [Python 3.6+](https://www.python.org/downloads/).
+  2. Install [Flask](https://pypi.org/project/Flask/) with `pip install Flask`.
+  3. Run `riffapi-local.py`.
 
-   Run `riffapi-local.py`.
+- Run with Docker.
+  1. Install Docker.
+  2. Run with `docker compose up --build`.
 
-2. Use [Docker](https://www.docker.com/products/docker-desktop/).
-
-   Open a command prompt on this directory and run `docker compose up --build`
-
-**Important**: keep open the command prompt until you exit the game.
+**Important**: keep the command prompt open until you exit the game.
 
 ## riffapi.hobune.stream
 
