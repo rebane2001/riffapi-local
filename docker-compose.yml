@@ -5,3 +5,5 @@ services:
     build: .
     ports:
       - "5144:5144"
+    environment:
+      - HOST=0.0.0.0

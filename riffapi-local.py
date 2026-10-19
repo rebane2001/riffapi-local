@@ -1,3 +1,4 @@
+import os
 from flask import Flask, request
 import string
 import random
@@ -34,6 +35,9 @@ def ClassEventPOST(event):
     return f'{{"objectId":"{"".join(random.choice(string.ascii_lowercase) for _ in range(10))}","createdAt":"2000-01-01T00:00:00.000Z"}}'
 
 if __name__ == '__main__':
-    app.run(host="127.0.0.1", port=5144, debug=False)
+    # Bind to 0.0.0.0 when running in a container (port publishing reaches the
+    # container's eth0, not its loopback); stay on loopback for the plain
+    # "run with Python" path.
+    app.run(host=os.environ.get("HOST", "127.0.0.1"), port=5144, debug=False)
 
 # sed -i "s/https:\/\/parseapi.back4app.com/http:\/\/127.000000000.0.1:5144/g" ParseOctane.dll
